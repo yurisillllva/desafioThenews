@@ -18,4 +18,4 @@ Com isso já é possivel via Pstman testar a Api
 npm install instalar as dependências
 npm start
 
-tem que ter um terminal rodando o backend
+tem que ter um terminal rodando o backend# thenews

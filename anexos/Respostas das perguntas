@@ -1,0 +1,46 @@
+-----Respostas das questões
+
+---Stacks
+Então... cumprindo as stacks obrigatórias, escolhi o backend em Typescript, o banco de dados relacional foi o MySql, e o frontend em React. Diante disso no backend as tecnologias forasbcrypt para encryptar a senha, o cors que auxilia a comunicação do frontend com o backend, o framework express, o jest para realizar os testes unitários. Para o o frontend o axios para comunicar com as rotas do backend, o chart para poder criar gráficos, o react-router-dom para as rotas do front. E ferramentas de auxílio como o Postman, Workbench, Github, VS Code e Ngrok.
+
+Inicialmente enfrentei o problema de entender o que realmente estava sendo pedido no desafio, buscando entender o sentido das informações que me foram dadas, e logo após o webhook como eu ira le-lo e também a espera dele se comunicar com a minha api. Outro problema que enfrentei foi com o middleaware de autenticação da verificação do token, já até desenvolvi com jwt porém dessa vez me custou muito tempo, que acabei decidindo retirar essa autenticação, até está implementado e deixei no código. Um último problema que tive e custou meu tempo foram as configurações do jest com o typescript, isso por mim era esperado diante que nas minhas experiências passadas sempre me custou tempo também.
+
+A organização de todo o código só foi possivel com um diagrama funcional que eu estarei anexando na pasta anexos também, ele serviu justamente para que eu podesse pensar como seria essa estrututa. Com isso minha organização foi ter uma api que recebe eventos de uma plataforma externa, nessa api utilizando com o ser arquivo principal server, em que a partir dele determina uma organização em que eu separei cada objetivo do sistema uma sepração, visando a descentralização de classes, este padrão design é o que estou familiarizado tanto no backend como o frontend que sua estrutura é quase que pré estabelecida com o React e com o front o tornando MVC. Com isso um fluxo pensando em alto nível é plataforma externa envia eventos, para minha api, um user faz logine o backend válida, armazena os dados, as streaks no BD e sinaliza no frontend.
+
+---Dados
+A estrutura do meu Banco de dados no MySql são duas tabelas uma que receberá os eventos, ou seja, o webwook da plataforma externa com o nome reading_events e users para salvar as informações dos usuários e fazer o link do email do user cadastrado, com o email do webwook lido. As operações de leitura e escrita estão distribuídas em endpoints específicos, com lógica separada entre rotas administrativas e de usuários.Na pasta de anexos deiraxei um script geral do meu banco para já ser criado com um user sendo admin. A seguir a estrura geral do meu BD:
+
+CREATE DATABASE IF NOT EXISTS gamification;
+USE gamification;
+
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  email VARCHAR(255) UNIQUE NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  is_admin BOOLEAN DEFAULT FALSE,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE reading_events (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT NOT NULL,
+  post_id VARCHAR(255) NOT NULL,
+  utm_source VARCHAR(255),
+  utm_medium VARCHAR(255),
+  utm_campaign VARCHAR(255),
+  utm_channel VARCHAR(255),
+  created_at DATETIME NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES users(id)
+  
+Eu penso que eu lidei de uma boa maneira com as inserções, busquei utilizar o mysql12 além de que minha consultas são parametrizadas, e com separações de rotas e queries, cada um cumpre seu único papel. Na tentativa também de ter uma tratativa inicial de evitar sobrecarga busquei limitar conexões e utilizei consultas simples e diretas como na rota GET /api/user/stats.
+
+O meu projeto até aqui pode-se dizer que ele é escalável, visto que ele atende bem em uma escala considerável de usuários pensando que ele está voltado para requesitos do desfio, caso haja possibilidade novas features com toda certeza deve-se de fazer melhoria quanto a consultas ne sse BD.
+
+---Testes
+Fiz testes unitários, como testei funções do UserController verificando a obtenção de estatísticas de usuários e méticas, e verifiquei erros globais de não conexões com o BD, fiz esses testes unitários utilizando mocks com o BD.
+Fiz testes os chamados de integração da api, com o Postman. Testando as rotas de criação de user, login, inserção de enventos na tabela. Busquei validar o fluxo completa do sistema. Até por que não funcionou muito bem eu usando o ngrok no log na minha api, não chegou nada da plataforma externa, então diante que vocês colocaram o objeto desse webwook a ser lido, minha plataforma externa que enviava dados para a minha api foi o Postman.
+Fiz também testes funcionais,  via navegador validando a experiência do usuário, com os testes manuais buscandoverificar a integração do frontend-backend.
+Fiz tambem o teste de validação dos fluxos, garantindo que todo o sistema de ponta a ponta tinha o funcionamento correto.
+
+Acredito que para realizar todos esses testes me custou um dia integral dele, mais ou menos um total de 8 horas devido a que tive que configurar o jest, desenvolver os testes e ajustes.
+

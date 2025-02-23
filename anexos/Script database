@@ -1,0 +1,38 @@
+-- Criação do banco de dados e tabelas
+CREATE DATABASE IF NOT EXISTS gamification;
+USE gamification;
+
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  email VARCHAR(255) UNIQUE NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  is_admin BOOLEAN DEFAULT FALSE,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE reading_events (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT NOT NULL,
+  post_id VARCHAR(255) NOT NULL,
+  utm_source VARCHAR(255),
+  utm_medium VARCHAR(255),
+  utm_campaign VARCHAR(255),
+  utm_channel VARCHAR(255),
+  created_at DATETIME NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+-- Inserção do usuário admin padrão (senha: 123446 criptografada com bcrypt)
+INSERT IGNORE INTO users (email, password, is_admin) 
+VALUES (
+  'admin@teste.com', 
+  '$2b$10$ylqtK1uh3br3nQr3y1VrsuW7V9sMPvZgBa8Qx25cnVxDMCyB18Ctu', -- bcrypt hash de "1234"
+  TRUE
+);
+
+-- Eventos de leitura de exemplo para o usuário normal
+INSERT INTO reading_events (user_id, post_id, created_at)
+VALUES 
+  (2, 'post_001', '2025-02-20 08:00:00'),
+  (2, 'post_002', '2025-02-21 09:30:00'),
+  (2, 'post_003', '2025-02-22 14:15:00');

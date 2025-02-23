@@ -1,0 +1,18 @@
+------ curls
+
+--Envio do webwook plaforma externa
+curl --location 'http://localhost:3001/api/webhook' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "data": {
+    "id": "post_00000000-0000-0000-0000-000000000000",
+    "email": "usuario@teste.com",
+    "created_at": "2025-02-23T01:03:34.856Z"
+  }
+}'
+
+--Leitura das streaks por user
+curl --location 'http://localhost:3001/api/user/stats?email=usuario%40teste.com'
+
+--Leitura das méticas do user admin
+curl --location 'GET http://localhost:3001/api/admin/metrics?email=email%3Dadmin%40teste.com'

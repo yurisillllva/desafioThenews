@@ -1,0 +1,66 @@
+.app-header {
+    background-color: #ffffff;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .user-email {
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .logout-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .main-layout {
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+  }
+
+  .container {
+    max-width: 800px; /* Largura máxima do conteúdo */
+    margin: 0 auto; /* Centraliza */
+    padding: 20px;
+  }
+  
+  .logout-button:hover {
+    background-color: #bb2d3b;
+  }
+
+  @media (max-width: 768px) {
+    .main-layout {
+      padding: 0 10px;
+    }
+    
+    .user-email {
+      max-width: 150px;
+      font-size: 14px;
+    }
+  
+    .logout-button {
+      padding: 6px 12px;
+      font-size: 14px;
+    }
+  }
+  

@@ -47,5 +47,13 @@ export const calculateStreak = (dates: Date[]): {
     }
   }
 
+  if (maxStreak === 1) {
+    currentStreak = 0;
+    maxStreak = 0 
+  } else if (maxStreak === 2) {
+    currentStreak = 1;
+    maxStreak = 1 
+  }
+
   return { currentStreak, maxStreak, streakHistory };
 };

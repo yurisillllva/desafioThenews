@@ -33,11 +33,16 @@ export const getUserStats = async (req: Request, res: Response) => {
     const userId = userRows[0].id;
 
     const [eventRows] = await pool.query<EventRow[]>(
-      'SELECT id, post_id, created_at FROM reading_events WHERE user_id = ?',
+      'SELECT id, post_id, created_at FROM reading_events WHERE user_id = ? ORDER BY created_at',
       [userId]
     );
 
-    const result = calculateStreak(eventRows.map(e => new Date(e.created_at)));
+    const result = calculateStreak(
+      eventRows.map(e => { 
+        const d = new Date(e.created_at);
+        return new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
+      })
+    );
 
     res.json({
       email: userRows[0].email,
@@ -80,7 +85,10 @@ export const getAdminMetrics = async (req: Request, res: Response) => {
         );
         
         const result = calculateStreak(
-          events.map(e => new Date(e.created_at))
+          events.map(e => {
+            const d = new Date(e.created_at);
+            return new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
+          })
         );
 
         return {

@@ -1,0 +1,15 @@
+Melhorias para o sistema:
+
+---Primeiramente melhorar o desempenho do banco de dados em caso de um grande sucesso e uma quantidade usuários passe mais de 5000.
+
+---Atualizar o backend para ter realmente os dados do engajamento, tanto no userController tanto como colunas a mais no BD na tabela reading_events.
+
+---Criar uma página de rota não encontrada no front, a 404.
+
+--- Aprimorar a autenticação do sistema está implementado com o jwt, porem tive problemas na autenticação em que tive de retirar esse middleware.
+
+--- Adcionar mais testes de acordo mais funcionalidades são implementadas. 
+
+--- Um recuperar senha para os users.
+
+--- Fazer uma revisão do cálculo das streaks me acarretou muito tempo, depois merece ser feita uma revisão branda.

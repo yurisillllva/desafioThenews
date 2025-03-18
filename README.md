@@ -1,4 +1,5 @@
 📚 Daily Reading Tracker
+
 Um sistema para acompanhamento de leituras diárias com gamificação e painel administrativo.
 
 🚀 Descrição do Projeto
@@ -15,7 +16,9 @@ Painel administrativo para monitoramento global de engajamento.
 Ideal para blogs, plataformas educacionais ou qualquer ambiente que incentive a leitura contínua.
 
 ✨ Funcionalidades Principais
+
 👤 Para Usuários:
+
 Cadastro e autenticação segura (JWT)
 
 Acompanhamento de streaks diários e histórico de leituras
@@ -25,6 +28,7 @@ Gráficos evolutivos do progresso
 Registro automático via webhook
 
 👩💼 Para Administradores:
+
 Métricas agregadas de todos os usuários
 
 Ranking de melhores streaks
@@ -34,21 +38,33 @@ Detecção de padrões de engajamento
 Controle de acesso baseado em roles
 
 🛠 Tecnologias Utilizadas
-Frontend
+
+Frontend:
+
 React
+
 TypeScript
+
 Chart.js
+
 Axios
 
-Backend
+Backend:
+
 Node.js
+
 Express
+
 MySQL
+
 JWT
 
-Testes & DevOps
+Testes & DevOps:
+
 Jest
+
 Postman
+
 Dotenv
 
 # Para rodar o backend

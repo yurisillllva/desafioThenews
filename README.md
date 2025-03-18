@@ -116,3 +116,5 @@ Projeto com framework cakePhp. Uma lista de Carros com seus condutores. Permitin
 Projeto foi desenvolvido para gerenciar informações de funcionários em uma empresa, utilizando conceitos de programação orientada a objetos em Java: https://github.com/yurisillllva/maoNaMassa 
 
 Para encontrar mais projetos em java, react, laravel e entre outros: https://github.com/yurisillllva 
+
+Projeto no figma, em que determinado cliente solictou um fluxograma funcional de como seria a sequência de um sistema de agendamentos de consultas de uma clínica via whatsapp e página web: https://www.figma.com/design/gGnzOHE5bkWL0d2C6lKhfg/Sistema-Clinica?node-id=0-1&t=cVmOdm6m8wVXo3mO-1 

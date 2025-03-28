@@ -1,8 +1,8 @@
-📚 Daily Reading Tracker
+# 📚 Daily Reading Tracker
 
 Um sistema para acompanhamento de leituras diárias com gamificação e painel administrativo. Que esse projeto até o momomento tem sido o meu carro chefe do meu portfólio, porem no final desse arquivo tem mais links e informações de demais projetos que servem para o meu portfólio.
 
-🚀 Descrição do Projeto
+# 🚀 Descrição do Projeto
 O Daily Reading Tracker é uma aplicação web que ajuda usuários a manterem o hábito da leitura através de:
 
 Registro de leituras com dados de origem (utm_source, utm_medium, etc).
@@ -15,7 +15,7 @@ Painel administrativo para monitoramento global de engajamento.
 
 Ideal para blogs, plataformas educacionais ou qualquer ambiente que incentive a leitura contínua.
 
-✨ Funcionalidades Principais
+## ✨ Funcionalidades Principais
 
 👤 Para Usuários:
 
@@ -37,9 +37,9 @@ Detecção de padrões de engajamento
 
 Controle de acesso baseado em roles
 
-🛠 Tecnologias Utilizadas
+## 🛠 Tecnologias Utilizadas
 
-Frontend:
+### Frontend:
 
 React
 
@@ -49,7 +49,7 @@ Chart.js
 
 Axios
 
-Backend:
+### Backend:
 
 Node.js
 
@@ -67,13 +67,13 @@ Postman
 
 Dotenv
 
-# Para rodar o backend
+## Para rodar o backend
 
 npm install instalar as dependências
 
 npm run dev
 
-# Para rodar os testes unitários
+## Para rodar os testes unitários
 
 abrir um novo terminal
 
@@ -83,7 +83,7 @@ deve-se abrir um outro terminal enquanto o terminal do backend está rodando
 
 Com isso já é possivel via Postman testar a Api
 
-# Para rodar o frontend
+## Para rodar o frontend
 
 npm install instalar as dependências
 
@@ -91,7 +91,7 @@ npm start
 
 tem que ter um terminal rodando o backend# thenews
 
-# Link Demonstrativo do sistema
+## Link Demonstrativo do sistema
 
 https://youtu.be/4BawOrvHQmc
 
@@ -99,7 +99,7 @@ https://youtu.be/4BawOrvHQmc
 
 ### Era para ter gravado com o celular na orizontal :(
 
-#### Para mostrar mais projetos segue o meu portfólio com uma visão geral do projeto, sendo que no próprio projeto em seu readme terá a descrição dos projetos:
+# Para mostrar mais projetos segue o meu portfólio com uma visão geral do projeto, sendo que no próprio projeto em seu readme terá a descrição dos projetos:
 
 Projeto em PHP api RestFul com Laravel, front com VueJS e Bootstrap para o css e BD Mysql, que gerencia categorias e subcategorias: https://github.com/yurisillllva/crudlaravelproject
 
